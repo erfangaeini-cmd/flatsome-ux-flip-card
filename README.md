@@ -1,4 +1,3 @@
-# flatsome-ux-flip-card
 # Flatsome UX Flip Card
 
 Native element for **Flatsome UX Builder** to render a flip-card (front/back images) with hover/click trigger.
