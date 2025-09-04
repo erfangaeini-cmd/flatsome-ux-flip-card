@@ -1,0 +1,21 @@
+name: release-zip-on-tag
+on:
+  push:
+    tags:
+      - 'v*.*.*'
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - name: Zip plugin folder
+        run: |
+          cd ..
+          mv $GITHUB_REPOSITORY flatsome-ux-flip-card
+          zip -r flatsome-ux-flip-card-v${GITHUB_REF_NAME#v}.zip flatsome-ux-flip-card -x "*/.git/*" "*/.github/*"
+      - name: Create GitHub Release
+        uses: softprops/action-gh-release@v2
+        with:
+          files: ../flatsome-ux-flip-card-v${{ github.ref_name#v }}.zip
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
