@@ -6,7 +6,7 @@ Native element for **Flatsome UX Builder** to render a flip-card (front/back ima
 - WordPress 6.0+ / PHP 7.4+
 - Flatsome theme with UX Builder enabled
 
-## Features (v1.0.0)
+## Features (v1.5.0)
 - Front/Back image
 - Trigger: Hover or Click (for mobile-friendly flip)
 - Direction: Horizontal (Y) or Vertical (X)
